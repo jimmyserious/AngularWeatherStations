@@ -1,3 +1,5 @@
+<app-weather-detail [station]="selectedStation"></app-weather-detail>
+
 <table class="table">
   <thead>
   <tr>
@@ -9,7 +11,7 @@
   </thead>
   <tbody>
 
-  <tr *ngFor="let station of weatherData">
+  <tr *ngFor="let station of weatherData" (click)="onSelect(station)" [class.active]="station === selectedStation">
     <th scope="row">{{station.stationName}}</th>
     <td>{{station.direction | uppercase}}</td>
     <td>{{convertKnots( station.speed ) | number:'1.0-2'}} {{getCurrentDisplay( currentView )}}</td>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Wind} from './models/wind.enum';
-import {WeatherStation} from './models/weather-station';
-import {WEATHERDATA} from './mock-stations';
+import {Wind} from '../models/wind.enum';
+import {WeatherStation} from '../models/weather-station';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-weather-stations',
@@ -12,12 +12,24 @@ export class WeatherStationsComponent implements OnInit {
     windEnum = Wind;
     currentView = Wind.knots;
     title = 'Weather Stations in VIC';
-    weatherData = WEATHERDATA;
+    weatherData : WeatherStation[];
+    selectedStation: WeatherStation;
 
-    constructor( ){
+    constructor( private weatherService: WeatherService ){
+
     }
 
     ngOnInit() {
+        this.getWeatherData();
+    }
+
+    getWeatherData(): void {
+        this.weatherService.getWeatherData()
+            .subscribe( weatherData => this.weatherData = weatherData );
+    }
+
+    onSelect(station:WeatherStation){
+      this.selectedStation = station;
     }
 
     changeDisplay( valueIn:Wind ){

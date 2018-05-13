@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+import { WeatherStation } from '../models/weather-station';
 
 @Injectable({
   providedIn: 'root'
@@ -10,4 +13,9 @@ weatherData = [
     { stationName: 'Port Fairy', direction: 'SW', speed:8, maxSpeed:10 },
 ];
   constructor() { }
+
+    getWeatherData(): Observable<WeatherStation[]> {
+        return of(this.weatherData);
+    }
+
 }

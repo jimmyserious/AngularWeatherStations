@@ -6,8 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { WeatherService } from './components/weather-stations/services/weather.service';
-import { WeatherStationsComponent } from './components/weather-stations/weather-stations.component';
+import { WeatherService } from './services/weather.service';
+import { WeatherStationsComponent } from './weather-stations/weather-stations.component';
+import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 //import {MockXhrBackend} from './mocks/mock-xhr-backend';
@@ -15,7 +17,9 @@ import { WeatherStationsComponent } from './components/weather-stations/weather-
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherStationsComponent
+    WeatherStationsComponent,
+    WeatherDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
