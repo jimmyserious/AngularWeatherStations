@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { WeatherService } from './services/weather.service';
+import { WeatherService } from './components/weather-stations/services/weather.service';
 import { WeatherStationsComponent } from './components/weather-stations/weather-stations.component';
 
 

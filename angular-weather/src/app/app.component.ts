@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import {Wind} from './models/wind.enum'
+import {Wind} from './components/weather-stations/models/wind.enum'
 
 @Component({
   selector: 'app-root',

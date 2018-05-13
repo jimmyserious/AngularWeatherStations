@@ -1,3 +1,21 @@
-<p>
-  weather-stations works!
-</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Station Name</th>
+    <th scope="col">Wind Direction</th>
+    <th scope="col">Wind Speed</th>
+    <th scope="col">Wind Speed Max</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let station of weatherData">
+    <th scope="row">{{station.stationName}}</th>
+    <td>{{station.direction | uppercase}}</td>
+    <td>{{convertKnots( station.speed ) | number:'1.0-2'}} {{getCurrentDisplay( currentView )}}</td>
+    <td>{{convertKnots( station.maxSpeed ) | number:'1.0-2'}} {{getCurrentDisplay( currentView )}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button (click)="changeDisplay(!currentView )">View in {{getCurrentDisplay( !currentView )}}</button>
