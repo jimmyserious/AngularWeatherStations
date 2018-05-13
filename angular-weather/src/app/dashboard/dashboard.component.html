@@ -1,0 +1,8 @@
+<h3>Top Stations</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let station of weatherData" class="col-1-4">
+    <div class="module station">
+      <h4><a routerLink="/detail/{{station.id}}">{{station.stationName}}</a></h4>
+    </div>
+  </a>
+</div>

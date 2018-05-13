@@ -4,8 +4,10 @@
     {{ title }}
   </h1>
 </div>
-
-<app-weather-stations></app-weather-stations>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/weather">Weather</a>
+</nav>
+<router-outlet></router-outlet>
 <app-messages></app-messages>
 
-<router-outlet></router-outlet>

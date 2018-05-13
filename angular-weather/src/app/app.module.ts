@@ -10,6 +10,7 @@ import { WeatherService } from './services/weather.service';
 import { WeatherStationsComponent } from './weather-stations/weather-stations.component';
 import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 //import {MockXhrBackend} from './mocks/mock-xhr-backend';
@@ -19,7 +20,8 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     WeatherStationsComponent,
     WeatherDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
