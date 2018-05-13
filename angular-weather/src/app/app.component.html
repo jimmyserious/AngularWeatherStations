@@ -4,6 +4,7 @@
     {{ title }}
   </h1>
 </div>
+<app-weather-stations></app-weather-stations>
 <table class="table">
   <thead>
   <tr>
@@ -14,25 +15,16 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">Aireys Inlet</th>
-    <td>SW</td>
-    <td>21 knts</td>
-    <td>28 knts</td>
-  </tr>
-  <tr>
-    <th scope="row">Cape Otway</th>
-    <td>NW</td>
-    <td>21 knts</td>
-    <td>48 knts</td>
-  </tr>
-  <tr>
-    <th scope="row">Port Fairy</th>
-    <td>SE</td>
-    <td>10 knts</td>
-    <td>18 knts</td>
+
+  <tr *ngFor="let station of weather.weatherData">
+    <th scope="row">{{station.stationName}}</th>
+    <td>{{station.direction | uppercase}}</td>
+    <td>{{convertKnots( station.speed ) | number:'1.0-2'}} {{getCurrentDisplay( currentView )}}</td>
+    <td>{{convertKnots( station.maxSpeed ) | number:'1.0-2'}} {{getCurrentDisplay( currentView )}}</td>
   </tr>
   </tbody>
 </table>
+
+<button (click)="changeDisplay(!currentView )">View in {{getCurrentDisplay( !currentView )}}</button>
 
 <router-outlet></router-outlet>
